@@ -6,10 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: linen;
+            line-height: 1.5em;
+            width: auto;
+            height: auto;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+        }
+
+        #container {
+            display: inline-flex;
+            margin: auto;
+            padding: 10px;
+            width: 70%;
+        }
+
+        #child {
+            border: dotted 1px black;
+            width: 50%;
+        }
+    </style>
     <title>jQuery Selectors</title>
 </head>
 
 <body>
+    <header>
+        <h1>jQuery | Selectors</h1>
+    </header>
+    <div id="container">
+        <div id="child">
+            <h3>Hei...</h3>
+        </div>
+        <div id="child">
+            <h3>Ho...</h3>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript code here 
+    </script>
 
 </body>
 
