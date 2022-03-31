@@ -27,10 +27,15 @@
             margin: 0;
             background: #333;
             color: #fff;
-            padding: 30px;
+            padding: 26px;
             padding-bottom: 0;
             text-align: right;
             border-bottom: 2px #000 solid;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
         }
 
         #container {
@@ -46,20 +51,26 @@
             padding: 10px;
         }
 
-        ul {
+        p.intro::first-letter {
+            color: #ff0000;
+            font-size: 200%;
+        }
+
+        #nav {
             list-style-type: none;
             margin: 0;
+            margin-top: 10px;
             padding: 0;
             overflow: hidden;
             background-color: #333;
             text-align: center;
         }
 
-        li {
+        li#nav {
             float: left;
         }
 
-        li a {
+        li#nav a {
             display: block;
             color: white;
             text-align: center;
@@ -67,7 +78,7 @@
             text-decoration: none;
         }
 
-        li a:hover:not(.active) {
+        li#nav a:hover:not(.active) {
             background-color: #111;
         }
 
@@ -82,40 +93,103 @@
     <header>
         <h1>jQuery</h1>
         <nav>
-            <ul>
-                <li><a class="active" href="#home">Home</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#methods">Methods</a></li>
-                <li><a href="#ajax">Ajax</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
+            <ul id="nav">
+                <li id="nav"><a class="active" href="#home">Home</a></li>
+                <li id="nav"><a href="#events">Events</a></li>
+                <li id="nav"><a href="#methods">Methods</a></li>
+                <li id="nav"><a href="#ajax">Ajax</a></li>
+                <li id="nav"><a href="#news">News</a></li>
+                <li id="nav"><a href="#contact">Contact</a></li>
+                <li id="nav"><a href="#about">About</a></li>
             </ul>
         </nav>
     </header>
     <div id="container">
         <div id="child">
-            <h3>Heading 1</h3>
+            <h3 id="heading1">Heading 1</h3>
             <p id="par1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
+                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
+                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
+            </p>
+            <br />
+            <p class="intro" id="par1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
                 Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
                 fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
             </p>
         </div>
         <div id="child">
-            <h3>Heading 2</h3>
+            <h3 class="heading2">Heading 2</h3>
             <p id="par2">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
                 Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
                 fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
+
+            <ul>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+            </ul>
             </p>
+            <br />
+            <p>
+                <input type="text" placeholder="Name" />
+                <input type="submit" value="Submit" /><br />
+                <input id="btn1" type="button" value="Button" />
+            </p>
+
+            <p>
+                <a href="http://google.com">Google</a>
+                <br />
+                <a href="http://microsoft.com">Microsoft</a>
+            </p>
+
+
         </div>
 
 
     </div>
 
     <script>
-        // JavaScript code here 
+        //// jQuery SELECTORS ////
+        $('h2').hide();
+        // We can use class and id selector to target different html-elements
+        //  $('h3#heading1').hide();
+        // $('h3.heading2').hide();
+        //  $('h3').hide();
+        //  $('h3').show();
+        // $('p span').css('color', 'red');
+        $('ul#list li:first').css('color', 'green');
+        // $(':button').hide(); // hides all buttons 
+        $('button').show(); // shows all buttons
+        // $(':button').show(); // shows all buttons
+        // $(':text').hide(); // $(':text').show();
+        // $('[href]').css('color', 'magenta');
+        // $('*').hide(); // HIDES EVERYTHING on the page
+
+
+        //// jQuery EVENTS (Functions) ////
+        $('#btn1').click(function () {
+            alert("Button clicked!")
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 </body>
