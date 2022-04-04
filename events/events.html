@@ -102,6 +102,7 @@
         <nav>
             <ul id="nav">
                 <li id="nav"><a class="active" href="../index.html">Home</a></li>
+                <li id="nav"><a href="../selectors/selectors.html">Selectors</a></li>
                 <li id="nav"><a href="../events/events.html">Events</a></li>
                 <li id="nav"><a href="../methods/methods.html">Methods</a></li>
                 <li id="nav"><a href="../ajax/ajax.html">Ajax</a></li>
@@ -112,15 +113,23 @@
         </nav>
     </header>
 
-    <div id="topdiv">
-        <h3>jQuery | Mouse Events </h3>
-        <button id="btn1">Button 1</button>
-        <button id="btn1">Button 2</button>
+    <div id="container">
+        <h3 class="heading">jQuery | Mouse Events </h3>
     </div>
+    <br />
+    <div id="container">
+        <button id="btn_toggle">Dbl Click to Toggle</button> :::
+        <button id="btn_hover">Hover to Toggle</button> :::
+        <button id="btn_move">Move mouse to Toggle</button> :::
+        <button id="btn_e">Butten e</button>
+    </div>
+
     <div id="container">
         <div id="child">
+            <button id="btn1">Hide txt1 </button>
+            <button id="btn11">Show txt1 </button>
             <h3 id="heading1">Heading 1</h3>
-            <p id="par1">
+            <p id="par1" class="par1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
                 Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
                 fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
@@ -128,20 +137,117 @@
         </div>
 
         <div id="child">
-            <h3 class="heading2">Heading 2</h3>
+            <button id="btn2">Hide txt2 </button>
+            <button id="btn22">Show txt2 </button>
+            <h3 id="heading2">Heading 2</h3>
             <p id="par2">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
                 Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
                 fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
             </p>
-
         </div>
     </div>
+    <div id="container">
+        <h3 class="heading">jQuery | Form Events </h3>
+    </div>
+    <br />
+
+    <div id="container">
+        <div id="child">
+            <form id="form">
+                <h4>Form 1</h4>
+                <label>Name</label>
+                <input type="text" id="name" name="name" /><br />
+                <label>Email</label>
+                <input type="text" id="email" name="email" /><br />
+                <label>Gender</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select> <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+
+    </div>
+
+    <div id="child">
+        <h2 id="coords"></h2>
+    </div>
+
+
+
 
     <script>
         //// jQuery | MOUSE EVENTS ////
-        $('#btn1').click(function () {
-            alert('Button clicked!');
+        $(document).ready(function () {
+
+            $('#btn0').click(function () {
+                alert('Button clicked!');
+            });
+
+            $('#btn1').click(function () {
+                $('#par1').hide();
+
+            });
+
+            $('#btn11').click(function () {
+                $('#par1').show();
+
+            });
+            $('#btn2').click(function () {
+                $('#par2').hide();
+
+            });
+
+            $('#btn22').click(function () {
+                $('#par2').show();
+
+            });
+
+            $('#btn_toggle').dblclick(function () { // double clik the button to toggle
+                $('#par1, #par2').toggle();
+
+            });
+
+            $('#btn_hover').hover(function () { // Hover to toggle
+                $('#par2').toggle();
+
+            });
+
+            $('#btn_move').on('mousemove', function () { // Move your mouse on the button 
+                $('#heading1, #heading2').toggle();
+
+            });
+
+            $('#btn_e').click(function (e) { // This is "button e" with many events and methods
+                // console.log(e);
+                // alert("The id of this button is: " + e.currentTarget.id);
+                alert("- InnerHTML of this button is: " + e.currentTarget.innerHTML + '\n' +
+                    "- OuterHTML of this button is: " + e.currentTarget.outerHTML);
+                // alert(e.currentTarget.outerHTML);
+            });
+
+            $(document).on('mousemove', function (e) {
+                $('#coords').html(' Document Coordinates: Y ' + e.clientY + ' X: ' + e.clientX);
+
+            });
+
+            $('input').focus(function () {
+                $(this).css('background', 'violet');
+            });
+
+            $('input').blur(function () {  // Opposite of FOCUS is BLUR
+                $(this).css('background', 'white');
+            });
+
+            $('#form').submit(function (e) {
+                e.preventDefault(); // Preventing the form from submitting
+                let name = $("input#name").val();
+                alert("Thx " + name + ", your form has been submitted."); // So that we can run this code
+            });
+
+
         });
 
 

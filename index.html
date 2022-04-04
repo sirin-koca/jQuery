@@ -23,6 +23,14 @@
             height: auto;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         header {
             margin: 0;
             background: #333;
@@ -36,6 +44,10 @@
         ul {
             margin-left: 20px;
             margin-top: 10px;
+        }
+
+        span {
+            color: magenta;
         }
 
         #container {
@@ -95,6 +107,7 @@
         <nav>
             <ul id="nav">
                 <li id="nav"><a class="active" href="../index.html">Home</a></li>
+                <li id="nav"><a href="../selectors/selectors.html">Selectors</a></li>
                 <li id="nav"><a href="../events/events.html">Events</a></li>
                 <li id="nav"><a href="../methods/methods.html">Methods</a></li>
                 <li id="nav"><a href="../ajax/ajax.html">Ajax</a></li>
@@ -105,87 +118,27 @@
         </nav>
     </header>
     <div id="container">
+        <h3>jQuery | Home </h3>
+    </div>
+    <div id="container">
         <div id="child">
-            <h3 id="heading1">Heading 1</h3>
+            <h3 id="heading1">What is jQuery?</h3>
             <p id="par1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
-                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
-                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
+                <a href="https://jquery.com/" target="_blank">jQuery</a> is a fast, small, and feature-rich
+                <span>JavaScript library</span>. It makes things
+                like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an
+                <span>easy-to-use</span> API that works across a multitude of browsers. With a combination of
+                versatility and extensibility,
+                jQuery has changed the way that millions of people write JavaScript.
             </p>
-            <br />
-            <p class="intro" id="par1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
-                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
-                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
-            </p>
-        </div>
-        <div id="child">
-            <h3 class="heading2">Heading 2</h3>
-            <p id="par2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
-                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
-                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
-
-            <ul>
-                <li>List item</li>
-                <li>List item</li>
-                <li>List item</li>
-            </ul>
-            </p>
-            <br />
-            <p>
-                <input type="text" placeholder="Name" />
-                <input type="submit" value="Submit" /><br />
-                <input id="btn1" type="button" value="Button" />
-            </p>
-
-            <p>
-                <a href="http://google.com">Google</a>
-                <br />
-                <a href="http://microsoft.com">Microsoft</a>
-            </p>
-
-
         </div>
     </div>
 
     <script>
-        //// jQuery SELECTORS ////
-        $('h2').hide();
-        // We can use class and id selector to target different html-elements
-        //  $('h3#heading1').hide();
-        // $('h3.heading2').hide();
-        //  $('h3').hide();
-        //  $('h3').show();
-        // $('p span').css('color', 'red');
-        $('ul#list li:first').css('color', 'green');
-        // $(':button').hide(); // hides all buttons 
-        $('button').show(); // shows all buttons
-        // $(':button').show(); // shows all buttons
-        // $(':text').hide(); // $(':text').show();
-        // $('[href]').css('color', 'magenta');
-        // $('*').hide(); // HIDES EVERYTHING on the page
+        //// jQuery HOME ////
+        $(document).ready(function () {
 
-
-        //// jQuery EVENTS (Functions) ////
-        $('#btn1').click(function () {
-            alert("Button clicked!")
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </script>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery | Selectors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: linen;
+            line-height: 1.5em;
+            width: auto;
+            height: auto;
+        }
+
+        header {
+            margin: 0;
+            background: #333;
+            color: #fff;
+            padding: 26px;
+            padding-bottom: 0;
+            text-align: right;
+            border-bottom: 2px #000 solid;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        #container {
+            display: inline-flex;
+            margin: auto;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #child {
+            border: dotted 1px black;
+            padding: 10px;
+        }
+
+        p.intro::first-letter {
+            color: #ff0000;
+            font-size: 200%;
+        }
+
+        #nav {
+            list-style-type: none;
+            margin: 0;
+            margin-top: 10px;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            text-align: center;
+        }
+
+        li#nav {
+            float: left;
+        }
+
+        li#nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 8px 24px;
+            text-decoration: none;
+        }
+
+        li#nav a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>jQuery</h1>
+        <nav>
+            <ul id="nav">
+                <li id="nav"><a class="active" href="../index.html">Home</a></li>
+                <li id="nav"><a href="../selectors/selectors.html">Selectors</a></li>
+                <li id="nav"><a href="../events/events.html">Events</a></li>
+                <li id="nav"><a href="../methods/methods.html">Methods</a></li>
+                <li id="nav"><a href="../ajax/ajax.html">Ajax</a></li>
+                <li id="nav"><a href="#news">News</a></li>
+                <li id="nav"><a href="#contact">Contact</a></li>
+                <li id="nav"><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <h3>jQuery | Selectors </h3>
+    </div>
+    <div id="container">
+        <div id="child">
+            <h3 id="heading1">Heading 1</h3>
+            <p id="par1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
+                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
+                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
+            </p>
+            <br />
+            <p class="intro" id="par1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
+                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
+                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
+            </p>
+        </div>
+        <div id="child">
+            <h3 class="heading2">Heading 2</h3>
+            <p id="par2">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
+                Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
+                fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
+
+            <ul>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+            </ul>
+            </p>
+            <br />
+            <p>
+                <input type="text" placeholder="Name" />
+                <input type="submit" value="Submit" /><br />
+                <input id="btn1" type="button" value="Button" />
+            </p>
+
+            <p>
+                <a href="http://google.com">Google</a>
+                <br />
+                <a href="http://microsoft.com">Microsoft</a>
+            </p>
+
+
+        </div>
+    </div>
+
+    <script>
+        //// jQuery SELECTORS ////
+        $('h2').hide();
+        // We can use class and id selector to target different html-elements
+        //  $('h3#heading1').hide();
+        // $('h3.heading2').hide();
+        //  $('h3').hide();
+        //  $('h3').show();
+        // $('p span').css('color', 'red');
+        $('ul#list li:first').css('color', 'green');
+        // $(':button').hide(); // hides all buttons 
+        $('button').show(); // shows all buttons
+        // $(':button').show(); // shows all buttons
+        // $(':text').hide(); // $(':text').show();
+        // $('[href]').css('color', 'magenta');
+        // $('*').hide(); // HIDES EVERYTHING on the page
+
+
+        //// jQuery EVENTS (Functions) ////
+        $('#btn1').click(function () {
+            alert("Button clicked!")
+        });
+
+
+    </script>
+
+</body>
+
+</html>
