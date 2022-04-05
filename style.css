@@ -48,11 +48,21 @@ span {
     margin-left: 20px;
     margin-right: 20px;
     width: auto;
+    height: auto;
 }
 
 #child {
+    display: inline-block;
     border: dotted 1px black;
     padding: 10px;
+}
+
+#childx {
+    display: block;
+}
+
+#childy {
+    display: inline-block;
 }
 
 #nav {
@@ -86,6 +96,10 @@ li#nav a:hover:not(.active) {
 }
 
 #jq-img {
-    width: 70%;
+    width: 100%;
     height: auto;
+}
+
+#github-img {
+    width: 80%;
 }
