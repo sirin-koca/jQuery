@@ -7,86 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery | The DOM</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body,
-        html {
-            font-size: 16px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: linen;
-            line-height: 1.5em;
-            width: auto;
-            height: auto;
-        }
-
-        header {
-            margin: 0;
-            background: #333;
-            color: #fff;
-            padding: 26px;
-            padding-bottom: 0;
-            text-align: right;
-            border-bottom: 2px #000 solid;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        #container {
-            display: inline-flex;
-            margin: auto;
-            padding: 10px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        #child {
-            border: dotted 1px black;
-            padding: 10px;
-        }
-
-        p.intro::first-letter {
-            color: #ff0000;
-            font-size: 200%;
-        }
-
-        #nav {
-            list-style-type: none;
-            margin: 0;
-            margin-top: 10px;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-            text-align: center;
-        }
-
-        li#nav {
-            float: left;
-        }
-
-        li#nav a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 8px 24px;
-            text-decoration: none;
-        }
-
-        li#nav a:hover:not(.active) {
-            background-color: #111;
-        }
-
-        .active {
-            background-color: #04AA6D;
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -94,7 +15,7 @@
         <h1>jQuery</h1>
         <nav>
             <ul id="nav">
-                <li id="nav"><a href="index.html">Home</a></li>
+                <li id="nav"><a href="../index.html">Home</a></li>
                 <li id="nav"><a href="../selectors/selectors.html">Selectors</a></li>
                 <li id="nav"><a href="../events/events.html">Events & Methods</a></li>
                 <li id="nav"><a class="active" href="../thedom/thedom.html">The DOM</a></li>
@@ -119,7 +40,6 @@
             </p>
 
         </div>
-
     </div>
 
     <script>
@@ -128,9 +48,7 @@
 
         });
 
-
     </script>
-
 </body>
 
 </html>
