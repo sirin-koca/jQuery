@@ -54,7 +54,7 @@
 
         p.intro::first-letter {
             color: #ff0000;
-            font-size: 200%;
+            font-size: 300%;
         }
 
         #nav {
@@ -97,7 +97,7 @@
                 <li id="nav"><a href="../index.html">Home</a></li>
                 <li id="nav"><a class="active" href="../selectors/selectors.html">Selectors</a></li>
                 <li id="nav"><a href="../events/events.html">Events & Methods</a></li>
-                <li id="nav"><a href="../thedom/thedom.html">DOM Manipulation</a></li>
+                <li id="nav"><a href="../thedom/thedom.html">The DOM</a></li>
                 <li id="nav"><a href="../ajax/ajax.html">Ajax</a></li>
                 <li id="nav"><a href="../news/news.html">News</a></li>
                 <li id="nav"><a href="#contact">Contact</a></li>
@@ -106,7 +106,7 @@
         </nav>
     </header>
     <div id="container">
-        <h3>jQuery | Selectors </h3>
+        <h2> jQuery | Selectors </h2>
     </div>
     <div id="container">
         <div id="child">
@@ -148,21 +148,45 @@
                 <br />
                 <a href="http://microsoft.com">Microsoft</a>
             </p>
-
-
         </div>
+
+        <div id="child" style="width: 200%;">
+            <h3>Examples used:</h3>
+            We can use class or id selectors to target different html-elements: <br />
+
+            <code>
+                    // $('h2').hide(); <br/>
+                    //  $('h3#heading1').hide(); <br/>
+                    // $('h3.heading2').hide(); <br/>
+                    //  $('h3').hide(); <br/>
+                    //  $('h3').show(); <br/>
+                    // $('p span').css('color', 'red'); <br/>
+                    // $('ul#list li:first').css('color', 'green'); <br/>
+                    // $(':button').hide(); // hides all buttons  <br/>
+                    // $('button').show(); // shows all buttons <br/>
+                    // $(':button').show(); // shows all buttons <br/>
+                    // $(':text').hide(); // $(':text').show(); <br/>
+                    // $('[href]').css('color', 'magenta'); <br/>
+                    // $('*').hide(); // HIDES EVERYTHING on the page <br/>
+                    // $('#btn1').click(function () { <br/>
+                        alert("Button clicked!") <br/>
+                        }); <br/>
+                
+            </code>
+        </div>
+
     </div>
 
     <script>
         //// jQuery SELECTORS ////
-        $('h2').hide();
+        // $('h2').hide();
         // We can use class and id selector to target different html-elements
         //  $('h3#heading1').hide();
         // $('h3.heading2').hide();
         //  $('h3').hide();
         //  $('h3').show();
         // $('p span').css('color', 'red');
-        $('ul#list li:first').css('color', 'green');
+        // $('ul#list li:first').css('color', 'green');
         // $(':button').hide(); // hides all buttons 
         $('button').show(); // shows all buttons
         // $(':button').show(); // shows all buttons
@@ -170,13 +194,9 @@
         // $('[href]').css('color', 'magenta');
         // $('*').hide(); // HIDES EVERYTHING on the page
 
-
-        //// jQuery EVENTS (Functions) ////
         $('#btn1').click(function () {
             alert("Button clicked!")
         });
-
-
     </script>
 
 </body>

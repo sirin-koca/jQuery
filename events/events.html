@@ -92,6 +92,10 @@
         .active {
             background-color: #04AA6D;
         }
+
+        aside {
+            background-color: rgb(238, 238, 238);
+        }
     </style>
     <title>jQuery | Events </title>
 </head>
@@ -104,7 +108,7 @@
                 <li id="nav"><a href="../index.html">Home</a></li>
                 <li id="nav"><a href="../selectors/selectors.html">Selectors</a></li>
                 <li id="nav"><a class="active" href="../events/events.html">Events & Methods</a></li>
-                <li id="nav"><a href="../thedom/thedom.html">DOM Manipulation</a></li>
+                <li id="nav"><a href="../thedom/thedom.html">The DOM</a></li>
                 <li id="nav"><a href="../ajax/ajax.html">Ajax</a></li>
                 <li id="nav"><a href="../news/news.html">News</a></li>
                 <li id="nav"><a href="#contact">Contact</a></li>
@@ -114,48 +118,43 @@
     </header>
 
     <div id="container">
-        <h3 class="heading">jQuery | Mouse Events </h3>
+        <h2 class="heading">jQuery | Mouse Events </h2>
     </div>
     <br />
     <div id="container">
         <button id="btn_toggle">Dbl Click to Toggle</button> :::
         <button id="btn_hover">Hover to Toggle</button> :::
-        <button id="btn_move">Move mouse to Toggle</button> :::
+        <button id="btn_move">Move mouse inside this button to Toggle</button> :::
         <button id="btn_e">Butten e</button>
     </div>
 
     <div id="container">
         <div id="child">
-            <button id="btn1">Hide txt1 </button>
-            <button id="btn11">Show txt1 </button>
-            <h3 id="heading1">Heading 1</h3>
+            <h3 id="heading1">Txt 1</h3>
             <p id="par1" class="par1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
                 Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
                 fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
             </p>
+            <br />
+            <button id="btn1">Hide txt1 </button>
+            <button id="btn11">Show txt1 </button>
         </div>
 
         <div id="child">
-            <button id="btn2">Hide txt2 </button>
-            <button id="btn22">Show txt2 </button>
-            <h3 id="heading2">Heading 2</h3>
+            <h3 id="heading2">Txt 2</h3>
             <p id="par2">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Debitis, neque autem.</span>
                 Harum facilis recusandae voluptates ea exercitationem temporibus rem neque deserunt, dolore,
                 fuga dignissimos doloremque maxime consequatur. Sit, sed illum!
             </p>
+            <br />
+            <button id="btn2">Hide txt2 </button>
+            <button id="btn22">Show txt2 </button>
         </div>
-    </div>
-    <div id="container">
-        <h3 class="heading">jQuery | Form Events </h3>
-    </div>
-    <br />
-
-    <div id="container">
         <div id="child">
+            <h3 class="heading">Form Events </h3>
             <form id="form">
-                <h4>Form 1</h4>
                 <label>Name</label>
                 <input type="text" id="name" name="name" /><br />
                 <label>Email</label>
@@ -168,11 +167,89 @@
                 <input type="submit" value="Submit" />
             </form>
         </div>
-
     </div>
 
     <div id="child">
-        <h2 id="coords"></h2>
+        <h2> :: Your Coordinates on this page will be shown here :: <span id="coords"> </span></h2>
+    </div>
+
+    <div id="container">
+        <aside>
+            <code>
+
+<h3>EXAMPLE USED on THIS PAGE</h3>
+$(document).ready(function () {  <br/>
+// We wrap all our jQuery-code inside "the-ready-funtion": it works like kind of DEFER - it waits until the JS-code is uploaded before it runs.
+
+<ul>
+    <li>
+        $('#btn0').click(function () {
+            alert('Button clicked!');
+            });        
+    </li>
+    <li>
+        $('#btn1').click(function () {
+            $('#par1').hide();
+            });
+    </li>
+    <li>    $('#btn11').click(function () {
+        $('#par1').show();
+        });
+    </li>
+    <li>    $('#btn2').click(function () {
+        $('#par2').hide();
+        });
+    </li>
+    <li>    $('#btn22').click(function () {
+        $('#par2').show();
+        });
+    </li>
+    <li>    $('#btn_toggle').dblclick(function () { // double clik the button to toggle
+        $('#par1, #par2').toggle();
+        });
+    </li>
+    <li>    $('#btn_hover').hover(function () { // Hover to toggle
+        $('#par2').toggle();
+        });
+    </li>
+    <li>    $('#btn_move').on('mousemove', function () { // Move your mouse on the button 
+        $('#heading1, #heading2').toggle();
+        });
+    </li>
+    <li>
+        $('#btn_e').click(function (e) { // This is "button e" with many events and methods<br/>
+        // console.log(e);<br/>
+        // alert("The id of this button is: " + e.currentTarget.id);<br/>
+        alert("- InnerHTML of this button is: " + e.currentTarget.innerHTML + '\n' +
+        "- OuterHTML of this button is: " + e.currentTarget.outerHTML);<br/>
+        // alert(e.currentTarget.outerHTML);
+        });
+    </li>
+    <li>
+        $(document).on('mousemove', function (e) {
+            $('#coords').html(' Document Coordinates: Y ' + e.clientY + ' X: ' + e.clientX);
+            });
+    </li>
+    <li>    $('input').focus(function () {
+        $(this).css('background', 'violet');
+        });
+    </li>
+    <li>    $('input').blur(function () {  // Opposite of FOCUS is BLUR
+        $(this).css('background', 'white');
+        });
+    </li>
+    <li>
+        $('#form').submit(function (e) { <br/>
+            e.preventDefault(); // Preventing the form from submitting <br/>
+            let name = $("input#name").val();
+            alert("Thx " + name + ", your form has been submitted."); // So that we can run this code
+            }); 
+    </li>
+</ul>      
+
+});
+        </code>
+        </aside>
     </div>
 
 
@@ -211,7 +288,7 @@
             });
 
             $('#btn_hover').hover(function () { // Hover to toggle
-                $('#par2').toggle();
+                $('#par1, #par2').toggle();
 
             });
 
@@ -229,7 +306,7 @@
             });
 
             $(document).on('mousemove', function (e) {
-                $('#coords').html(' Document Coordinates: Y ' + e.clientY + ' X: ' + e.clientX);
+                $('#coords').html('Y ' + e.clientY + ' X: ' + e.clientX);
 
             });
 
