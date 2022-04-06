@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap.min.css">
+    <title>Sirin Query</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+            vertical-align: center;
+            display: inline-block;
+            font-family: Gadugi, sans-serif;
+            background-color: snow;
+        }
+
+        .header {
+            background-color: gainsboro;
+            color: dimgray;
+            padding: 2em;
+        }
+
+        button {
+            padding: 0.2em;
+            border: 1px dotted #333;
+            border-radius: 3px;
+            margin: 0.1em;
+        }
+
+        .main {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            padding: 1em;
+            display: inline-block;
+            width: 100%;
+            background-color: snow;
+            border-radius: 5px;
+        }
+
+        .row {
+            background-color: snow;
+            border-radius: 5px;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .panel {
+            border: 1px solid dimgray;
+            background-color: lavender;
+            border-radius: 5px;
+            width: 200px;
+            height: 150px;
+            padding: 1em;
+            margin: 1em;
+            display: inline-block;
+        }
+
+        .panel-m {
+            border: 1px solid dimgray;
+            background-color: snow;
+            border-radius: 5px;
+            width: 96%;
+            height: 50px;
+            padding: 1em;
+            margin: 1em;
+            display: inline-block;
+        }
+
+        .panell {
+            border-radius: 3px;
+            width: 200px;
+            height: 150px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .panel-heading {
+            background-color: aliceblue;
+            border: 1px solid dimgray;
+            border-radius: 3px;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .panel-body {
+            background-color: lavender;
+            border: 1px solid dimgray;
+            border-radius: 3px;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .panel-form {
+            background-color: lavender;
+            border: 1px solid dimgray;
+            border-radius: 3px;
+            text-align: center;
+            display: inline-block;
+            width: 210px;
+            height: 140px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background-color: gainsboro;
+            color: dimgray;
+            padding: 2em;
+            position: fixed;
+            /* makes footer stick to bottom */
+            bottom: 0;
+            /* makes footer stick to bottom */
+            width: 100%;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1>jQuery | Animations </h1>
+            <br />
+            <button id="btn1">Btn1</button>
+            <button id="btn2">Btn2</button>
+            <button id="btn3">Btn3</button>
+            <button id="btn4">Btn4</button>
+            <button id="btn5">Btn5</button>
+            <button id="btn6">Btn6</button>
+            <button type="reset" id="reset">Reset</button>
+        </div>
+    </header>
+    <div>
+        <div class="panel-m" id="panel7">
+            <p>
+                Click on the buttons above to see different jQuery-event-handlers in action.
+            </p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="panel-form">
+            <div id="ex">
+                <label for="inn">Your name:</label>
+                <input id="inn" type="text" />
+                <div id="navn"></div>
+                <button id="knapp">:.click here.:</button>
+                <div id="melding"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="panel" id="panel1">Panel1</div>
+                <div class="panel" id="panel2">Panel2</div>
+                <div class="panel" id="panel3">Panel3</div>
+            </div>
+            <div class="row">
+                <div class="panell" id="panel4">
+                    <div class="panel-heading">Panel4</div>
+                    <div class="panel-body">content</div>
+                </div>
+                <div class="panell" id="panel5">
+                    <div class="panel-heading">Panel5</div>
+                    <div class="panel-body">content</div>
+                </div>
+                <div class="panell" id="panel6">
+                    <div class="panel-heading">Panel6</div>
+                    <div class="panel-body">content</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer"> .:: footer :: footer :: footer ::.</div>
+    </footer>
+    <script type="application/javascript">
+        $(function () {      // Dette er samme som : $(document).ready(function(){});
+
+            // BUTTON Functions
+            $("#btn1").click(function () {
+                $("#panel1").html("<h3>Panel-1:<br/>Hello World!</h3>");
+            });
+            $("#btn2").click(function () {
+                $("#panel2").html("<h3>Panel-2:<br/>Hello User!</h3>");
+            });
+            $("#btn3").click(function () {
+                $("#panel3").html("<h3>Panel-3:<br/>Hello jQuery!</h3>");
+            });
+            $("#btn4").click(function () {
+                // ANIMATIONS - Animerte Paneler
+                $(".panel").hide(300).show(1000);  // hide&show on document load (ready), vd første åpning av siden - onload
+                $("#panel1").slideUp(1000).slideDown(1000);
+                $("#panel2").fadeIn(1000).fadeOut(1000).fadeIn(500);
+                $("#panel3").fadeToggle(500).fadeToggle(300);
+            });
+            $("#btn5").click(function () {
+                // ANIMATIONS - Animerte Paneler
+                $(".panel").hide(300).show(1000).toggle();  // hide&show on document load (ready), vd første åpning av siden - onload
+                $(".panel").fadeToggle(500).fadeToggle(300);
+
+                $("#panel1").css({ color: 'tomato' });
+                $("#panel2").css({ color: 'green' });
+                $("#panel3").css({ color: 'magenta' });
+            });
+            $("#btn6").click(function () {
+                $(".panel").css("background", "snow").toggle();
+            });
+            $("#reset").click(function () {
+                location.reload();
+            });
+
+
+            // FORM - Vis melding
+            $("#knapp").click(function () {
+                $("#melding").html("<h4>Hello World!</h4>");
+            });
+
+            $("#inn").change(function () {
+                let navnet = $("#inn").val();
+                $("#navn").text("Hello, " + navnet);
+            });
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>
